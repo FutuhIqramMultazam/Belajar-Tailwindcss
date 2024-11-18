@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-slate-900 text-white">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sour: ["Sour Gummy"],
+            },
+            colors: {
+              icam: "#c0ffee",
+            },
+          },
+        },
+      };
+    </script>
+
+    <div class="container">
+      <h1 class="text-center font-sour m-4 bg-gradient-to-r from-blue-500 to-teal-200 bg-clip-text text-transparent text-5xl">Mari Belajar Tailwind Css</h1>
+
+      <div class="my-5 mx-auto text-center p-4 bg-gradient-to-br from-teal-500 via-cyan-400 to-gray-300 text-slate-900 rounded-md">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatum nostrum autem! Dolor magni accusamus quasi explicabo maiores corrupti suscipit!</p>
+      </div>
+
+      <div class="mx-auto text-center p-5 bg-gradient-to-r from-white via-pink-400 to-white rounded-md">
+        <input type="text" placeholder="Masukan nama" name="" id="" class="rounded-md text-gray-950" />
+      </div>
+
+      <div class="mx-auto text-center my-5">
+        <button class="bg-gradient-to-br from-yellow-200 to-teal-300 p-5 text-gray-950 rounded-full hover:bg-gradient-to-bl">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
