@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <!-- class="dark"-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <style type="text/tailwindcss">
+      #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3;
+      }
+    </style>
   </head>
-  <body class="bg-slate-900 text-white">
+  <body class="dark:bg-slate-900 dark:text-slate-200">
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
@@ -38,7 +45,7 @@
       <!-- contoh penggunaan arbitrary value , atau bisa di sebut nilai yang bisa kita masukan langsung ke kelas nya  -->
       <!-- dan di sini ada contoh penggunaan Background Attachment -->
       <div class="mt-[42px] max-w-xl h-96 bg-[#38BDF8] mx-auto rounded-md overflow-y-scroll bg-fixed bg-cover bg-center bg-no-repeat bg-[url('https://picsum.photos/1000/600')]">
-        <p class="p-5 text-2xl text-gray-950">
+        <p class="dark:text-slate-200 p-5 text-2xl text-gray-950">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus exercitationem praesentium neque dolorum sequi dolorem! Ipsum obcaecati sunt impedit odit! In possimus inventore earum saepe numquam eius voluptatum maxime
           magnam ratione error itaque omnis iste dolores culpa, neque ipsum expedita unde, non impedit officiis ducimus! Eveniet, mollitia neque quis autem error odit quaerat deserunt aliquam architecto ex delectus vitae corrupti, obcaecati
           nostrum dicta perspiciatis nemo aliquid libero cupiditate quibusdam! Debitis perspiciatis sequi veritatis alias a, molestiae qui vitae dolore ad minus possimus? Laudantium nulla, est quaerat corrupti corporis earum eius aspernatur
@@ -62,7 +69,65 @@
       <!-- contoh penggunaan border -->
       <div class="max-w-xl h-96 mt-10 mx-auto rounded-md bg-teal-300 border-pink-500 border-4 border-b-purple-600"></div>
 
+      <hr class="my-10" />
+
+      <div class="flex justify-center">
+        <span class="text-sm text-slate-500 mr-2">Light</span>
+        <input type="checkbox" name="" id="toggle" class="hidden" />
+        <label for="toggle">
+          <div class="cursor-pointer w-9 h-5 bg-slate-500 rounded-full flex items-center p-1">
+            <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+          </div>
+        </label>
+        <span class="text-sm text-slate-500 ml-2">Dark</span>
+      </div>
+
+      <button class="my-10 bg-sky-500 px-5 py-2 rounded-full font-sour block mx-auto hover:bg-sky-600 active:bg-sky-700 focus:ring focus:ring-sky-300">Simpan</button>
+
+      <!-- pembahasan tentang pseudoclass group hover-->
+      <div class="max-w-xl dark:hover:bg-slate-300 mx-auto rounded-md text-slate-700 p-5 border border-slate-300 hover:bg-sky-500 group shadow-xl hover:shadow-green-600">
+        <h5 class="group-hover:text-white text-lg font-bold text-slate-700 mb-3 dark:group-hover:text-slate-700 dark:text-slate-300">My Card</h5>
+        <p
+          class="selection:bg-lime-500 selection:text-slate-600 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 group-hover:text-white dark:text-slate-300 dark:group-hover:text-slate-600"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident repellat vero culpa beatae nihil natus, incidunt dignissimos sapiente harum dolorem eligendi expedita cumque, omnis illum? Est architecto perspiciatis
+          repellat consequuntur labore velit, natus explicabo eaque quae, aspernatur, maiores aliquam minus accusamus. Totam repellat fugit magni libero aspernatur accusantium non.
+        </p>
+      </div>
+
+      <div class="hover:bg-sky-500 group max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md">
+        <h5 class="group-hover:text-white font-bold text-slate-700 text-lg mb-3">My Card</h5>
+        <p class="group-hover:text-white text-slate-700">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cupiditate id dignissimos! Eaque animi impedit ratione magnam temporibus. Mollitia molestias maxime sapiente eaque dicta dolores quidem enim, quasi voluptatem totam.
+        </p>
+      </div>
+
+      <!-- materi form -->
+      <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-md p-5">
+        <form action="" method="post">
+          <label for="">
+            <span class="block font-semibold mb-1 text-slate-700">Email</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="px-3 py-2 border text-slate-700 shadow rounded w-full block text-sm focus:ring-1 focus:ring-sky-500 focus:outline-none focus:border-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"
+              placeholder="Masukan email..."
+            />
+            <p class="text-sm mt-1 ml-2 invisible peer-invalid:visible text-red-600">Lanjutkan mengetik, Format email anda belum valid</p>
+          </label>
+        </form>
+      </div>
+
       <div class="mb-96"></div>
     </div>
+    <script>
+      const checkbox = document.getElementById("toggle");
+      const html = document.querySelector("html");
+
+      checkbox.addEventListener("click", () => {
+        checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
+      });
+    </script>
   </body>
 </html>
