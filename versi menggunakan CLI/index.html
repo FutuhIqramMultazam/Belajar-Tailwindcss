@@ -6,9 +6,97 @@
     <title>Coba tailwind</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-gray-800 text-white">
+  <body class="dark:bg-gray-800 dark:text-slate-300">
     <div class="container">
-      <h1 class="text-6xl">Mari belajar Tailwind css</h1>
+      <div class="container mx-auto">
+        <h1 class="text-center font-sour m-4 bg-gradient-to-r from-blue-500 to-teal-200 bg-clip-text text-transparent text-7xl">Mari Belajar Tailwind Css</h1>
+  
+        <div class="my-5 mx-auto text-center p-4 bg-gradient-to-br from-teal-500 via-cyan-400 to-gray-300 text-slate-900 rounded-md">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatum nostrum autem! Dolor magni accusamus quasi explicabo maiores corrupti suscipit!</p>
+        </div>
+  
+        <div class="mx-auto text-center p-5 bg-gradient-to-r from-white via-pink-400 to-white rounded-md">
+          <input type="text" placeholder="Masukan nama" name="" id="" class="rounded-md text-gray-950" />
+        </div>
+  
+        <!-- contoh penggunaan arbitrary value , atau bisa di sebut nilai yang bisa kita masukan langsung ke kelas nya  -->
+        <!-- dan di sini ada contoh penggunaan Background Attachment -->
+        <div class="mt-[42px] max-w-xl h-96 bg-[#38BDF8] mx-auto rounded-md overflow-y-scroll bg-fixed bg-cover bg-center bg-no-repeat bg-[url('https://picsum.photos/1000/600')]">
+          <p class="dark:text-slate-200 p-5 text-2xl text-gray-950">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus exercitationem praesentium neque dolorum sequi dolorem! Ipsum obcaecati sunt impedit odit! In possimus inventore earum saepe numquam eius voluptatum maxime
+            magnam ratione error itaque omnis iste dolores culpa, neque ipsum expedita unde, non impedit officiis ducimus! Eveniet, mollitia neque quis autem error odit quaerat deserunt aliquam architecto ex delectus vitae corrupti, obcaecati
+            nostrum dicta perspiciatis nemo aliquid libero cupiditate quibusdam! Debitis perspiciatis sequi veritatis alias a, molestiae qui vitae dolore ad minus possimus? Laudantium nulla, est quaerat corrupti corporis earum eius aspernatur
+            numquam sapiente minus vero nam esse accusamus velit maxime voluptatem ullam consequatur perferendis delectus odit voluptas quae quia iusto ad! Illum, quo et velit similique eum pariatur omnis possimus mollitia officiis est
+            repellat voluptates laborum debitis temporibus dolorum rem amet blanditiis fugiat eveniet. Deleniti modi, error aliquid voluptas nihil esse autem omnis asperiores nemo necessitatibus quas numquam ratione, voluptate vel repellendus
+            nam! Suscipit, placeat expedita. Repellat quo debitis assumenda sit error. Vero corporis animi cupiditate praesentium minima enim itaque fugiat voluptates at, nulla sint, iure hic illo doloremque fugit. Eum obcaecati itaque
+            reprehenderit! Quasi voluptates, aliquid illo autem perferendis optio ipsum repudiandae, aut tenetur alias a atque cumque.
+          </p>
+        </div>
+  
+        <div class="relative rounded-xl overflow-auto p-8">
+          <div class="flex justify-center">
+            <button type="button" class="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-6 py-3 rounded-md">Hover me</button>
+          </div>
+        </div>
+  
+        <div class="rounded-md h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+  
+        <div class="h-14 mt-6 rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ..."></div>
+  
+        <!-- contoh penggunaan border -->
+        <div class="max-w-xl h-96 mt-10 mx-auto rounded-md bg-teal-300 border-pink-500 border-4 border-b-purple-600"></div>
+  
+        <hr class="my-10" />
+  
+        <div class="flex justify-center">
+          <span class="text-sm text-slate-500 mr-2">Light</span>
+          <input type="checkbox" name="" id="toggle" class="hidden" />
+          <label for="toggle">
+            <div class="cursor-pointer w-9 h-5 bg-slate-500 rounded-full flex items-center p-1">
+              <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+            </div>
+          </label>
+          <span class="text-sm text-slate-500 ml-2">Dark</span>
+        </div>
+  
+        <button class="my-10 bg-sky-500 px-5 py-2 rounded-full font-sour block mx-auto hover:bg-sky-600 active:bg-sky-700 focus:ring focus:ring-sky-300">Simpan</button>
+  
+        <!-- pembahasan tentang pseudoclass group hover-->
+        <div class="max-w-xl dark:hover:bg-slate-300 mx-auto rounded-md text-slate-700 p-5 border border-slate-300 hover:bg-sky-500 group shadow-xl hover:shadow-green-600">
+          <h5 class="group-hover:text-white text-lg font-bold text-slate-700 mb-3 dark:group-hover:text-slate-700 dark:text-slate-300">My Card</h5>
+          <p
+            class="selection:bg-lime-500 selection:text-slate-600 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 group-hover:text-white dark:text-slate-300 dark:group-hover:text-slate-600"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde provident repellat vero culpa beatae nihil natus, incidunt dignissimos sapiente harum dolorem eligendi expedita cumque, omnis illum? Est architecto perspiciatis
+            repellat consequuntur labore velit, natus explicabo eaque quae, aspernatur, maiores aliquam minus accusamus. Totam repellat fugit magni libero aspernatur accusantium non.
+          </p>
+        </div>
+  
+        <div class="hover:bg-sky-500 group max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md">
+          <h5 class="group-hover:text-white font-bold text-slate-700 text-lg mb-3">My Card</h5>
+          <p class="group-hover:text-white text-slate-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cupiditate id dignissimos! Eaque animi impedit ratione magnam temporibus. Mollitia molestias maxime sapiente eaque dicta dolores quidem enim, quasi voluptatem totam.
+          </p>
+        </div>
+  
+        <!-- materi form -->
+        <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-md p-5">
+          <form action="" method="post">
+            <label for="">
+              <span class="block font-semibold mb-1 text-slate-700">Email</span>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="px-3 py-2 border text-slate-700 shadow rounded w-full block text-sm focus:ring-1 focus:ring-sky-500 focus:outline-none focus:border-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"
+                placeholder="Masukan email..."
+              />
+              <p class="text-sm mt-1 ml-2 invisible peer-invalid:visible text-red-600">Lanjutkan mengetik, Format email anda belum valid</p>
+            </label>
+          </form>
+        </div>
+  
+        <div class="mb-96"></div>
     </div>
   </body>
 </html>
